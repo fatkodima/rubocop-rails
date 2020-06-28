@@ -4,6 +4,7 @@
 
 ### New features
 
+* [#277](https://github.com/rubocop-hq/rubocop-rails/pull/277): Add new `Rails/ForeignKeyName` cop. ([@fatkodima][])
 * [#52](https://github.com/rubocop-hq/rubocop-rails/issues/52): Add new `Rails/AfterCommitOverride` cop. ([@fatkodima][])
 
 ## 2.7.1 (2020-07-26)

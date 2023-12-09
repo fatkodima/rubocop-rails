@@ -12,6 +12,17 @@ RSpec.describe RuboCop::Cop::Rails::PluckId, :config do
     RUBY
   end
 
+  it 'registers an offense and corrects when using `pluck(:id)` with a safe navigation' do
+    expect_offense(<<~RUBY)
+      users&.pluck(:id)
+             ^^^^^^^^^^ Use `ids` instead of `pluck(:id)`.
+    RUBY
+
+    expect_correction(<<~RUBY)
+      users&.ids
+    RUBY
+  end
+
   it 'registers an offense and corrects when using `pluck(primary_key)`' do
     expect_offense(<<~RUBY)
       def self.user_ids
